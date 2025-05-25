@@ -18,10 +18,10 @@ cd server/apps/server-app
 if [ -n "$2" ] && [ "latest" = "$2" ]; then
     echo "Building docker image with tag \`$2\`"
 
-    docker build --platform linux/amd64 -t bytechef/bytechef-server:$2 .
+    docker build --platform linux/arm64 -t bytechef/bytechef-server:$2 .
 fi
 
-docker build --platform linux/amd64 -t bytechef/bytechef-server:$1 .
+docker build --platform linux/arm64 -t bytechef/bytechef-server:$1 .
 
 cd ../../../client
 
@@ -34,7 +34,7 @@ cd ..
 if [ -n "$2" ] && [ "latest" = "$2" ]; then
     echo "Building docker image with tag \`$2\`"
 
-    docker build --platform linux/amd64 -t bytechef/bytechef:$2 .
+    docker build --platform linux/arm64 -t bytechef/bytechef:$2 .
 fi
 
-docker build --platform linux/amd64 -t bytechef/bytechef:$1 .
+docker build --platform linux/arm64 -t bytechef/bytechef:$1 .
