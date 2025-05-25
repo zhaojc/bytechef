@@ -13,7 +13,7 @@ services:
       - POSTGRES_DB=bytechef
   bytechef:
     container_name: bytechef
-    image: bytechef:latest
+    image: bytechef/bytechef:20250315
     depends_on:
       postgres:
         condition: service_started
@@ -25,6 +25,7 @@ services:
       - BYTECHEF_SECURITY_REMEMBER-ME_KEY=e48keep1this1safe3ffb2
     ports:
       - "8080:8080"
+      - "5025:5025"
 volumes:
   storage_db:
     driver: "local"
